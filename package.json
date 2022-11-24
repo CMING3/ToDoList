@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMING3/ToDoList.git"
+  },
+  "author": "cming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMING3/ToDoList/issues"
+  },
+  "homepage": "https://github.com/CMING3/ToDoList#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
