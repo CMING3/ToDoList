@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+.to-do-list{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(8,1fr);
+    height: 100vh;
+    width: 100vw;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    font-family: monospace;
+    border-bottom: 1px solid black;
+    grid-area: 1/1/2/6;
+}
+
+.hamburger{
+    display: none;
+    border: 1px solid black;
+    padding: 5px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sidebar{
+    border-right: 1px solid black;
+    grid-area: 2/1/9/2;
+}
+
+@media screen and (max-width: 700px){
+    .sidebar{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+}
+
+.navbar{
+    padding: 20px;
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
+
+.navbar>li{
+    cursor: pointer;
+    line-height: 2;
+}
+
+li>i{
+    width:10px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.project-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.add-project{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.projects{
+    padding: 20px;
+}
