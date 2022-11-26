@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",void function(){const e=document.querySelector(".add-task"),t=document.querySelector(".add-project");e.addEventListener("click",(()=>{console.log("add task btn working")})),t.addEventListener("click",(()=>{console.log("add project btn working")}))}())})();
