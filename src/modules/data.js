@@ -1,5 +1,6 @@
 export default function dataBase(){
-    
+    taskList = JSON.parse(localStorage.getItem("taskData"))
+    projectList = JSON.parse(localStorage.getItem("projectData"))
     /*
     task[{
             title: string,
@@ -7,10 +8,15 @@ export default function dataBase(){
             priority: string,
             date: date,
             complete: boolean,
+            project: string,
         }]
     */
-    let task = [];
-    let project = [];
+    let taskList = [];
+
+    /*
+    projectList["project A", "project B"]
+    */
+    let projectList = [];
 
     getLocalStorage()
 }
