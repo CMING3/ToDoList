@@ -1,21 +1,33 @@
 import data from "./data"
+import projects from "./projects"
 
 export default function loadPage(){
     //load content from data base
-    eventHandler()
+    DOMHandler()
 
 
 
-    function eventHandler(){
+    function DOMHandler(){
         const addTaskBtn = document.querySelector(".add-task")
         const addProjectBtn = document.querySelector(".add-project")
+        const formModal = document.querySelector(".form-modal")
+        const closeTab = document.querySelector(".fa-times")
+        const projectForm = document.querySelector(".add-project-form")
 
         addTaskBtn.addEventListener("click", ()=>{
-            console.log("add task btn working")
+            formModal.style.display = "flex";
+        })
+
+        closeTab.addEventListener("click", ()=>{
+            formModal.style.display = "none"
         })
 
         addProjectBtn.addEventListener("click", ()=> {
-            console.log("add project btn working")
+            if (projectForm.style.display=="none"){
+                projectForm.style.display="block"
+            } else {
+                projectForm.style.display="none"
+            }
         })
     }
 }
