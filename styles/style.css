@@ -8,10 +8,17 @@ body{
     background-color: white;
 }
 
+h1{
+    font-family: monospace;
+}
+
 ul,li{
     list-style: none;
 }
 
+/*
+Page interface
+*/
 .to-do-list{
     display: grid;
     grid-template-columns: repeat(5,1fr);
@@ -20,12 +27,14 @@ ul,li{
     width: 100vw;
 }
 
+/*
+Header style here
+*/
 .header{
     display: flex;
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    font-family: monospace;
     border-bottom: 1px solid black;
     grid-area: 1/1/2/6;
 }
@@ -38,6 +47,9 @@ ul,li{
     cursor: pointer;
 }
 
+/*
+Sidebar style start here
+*/
 .sidebar{
     border-right: 1px solid black;
     grid-area: 2/1/9/2;
@@ -53,7 +65,7 @@ ul,li{
 }
 
 .navbar{
-    padding: 20px;
+    padding: 1rem;
     margin-bottom: 20px;
     padding-right: 50px;
 }
@@ -64,17 +76,38 @@ ul,li{
     border-radius: 4px;
 }
 
-li>i{
+.navbar-item~span>i{
     width:10px;
     text-align: center;
     margin-right: 5px;
 }
 
+.navbar-item~span{
+    border-radius: 4px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+input:checked~span{
+    background-color: rgba(140, 140, 140, 0.7);
+}
+
+.navbar-item-container{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item{
+    display: none;
+}
+
+
+
 .project-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 1rem;
     padding-bottom: 5px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -87,19 +120,95 @@ li>i{
 
 .projects{
     padding: 20px;
+    overflow: scroll;
 }
 
-.target-page{
-    background-color: rgba(140, 140, 140, 0.7);
+.project-item{
+    cursor: pointer;
 }
+
+/*
+add project form style
+*/
+.add-project-form{
+    display: none;
+    width: 100%;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/*
+Sidebar style end
+*/
 
 .content{
     grid-area: 2/2/9/6;
+    overflow: scroll;
 }
 
-.add-task{
+/*
+task item style here
+*/
+.task-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.task-item{
+    display: flex;
     width:80%;
     height:80px;
+    border:1px solid black;
+    border-radius: 0.5rem;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.task-content{
+    display: flex;
+    flex:1 1 0%;
+}
+
+.task-content>.date{
+    margin:0 10px;
+    appearance: none;
+    outline:none;
+    border: none;
+    text-decoration: none;
+}
+
+.task-content>.item{
+    border:none;
+    font-size: 1rem;
+}
+
+.actions>button{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit{
+    background-color: rgb(180, 180, 180);
+}
+
+.delete{
+    background-color: rgb(222, 22, 22);
+}
+
+/*
+add task button style
+*/
+.add-task{
+    width:70%;
+    height:70px;
     background-color: lightgrey;
     border-radius: 4px;
     margin: 20px auto;
@@ -109,3 +218,100 @@ li>i{
     align-items: center;
     cursor: pointer;
 }
+
+/*
+Pop up form style start here
+*/
+.form-modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(180, 180, 180, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.add-task-form{
+    width: 60%;
+    height: 60%;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: #fff;
+    transition: 0.2s ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+    .add-task-form{
+        width: 80%;
+        height: 80%;
+    }
+}
+
+.form-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-head>i{
+    cursor: pointer;
+}
+
+.priority-radios>label{
+    display: flex;
+}
+
+.form-body>input:not([type="radio"]){
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    outline: none;
+    background: none;
+    cursor: initial;
+    width: 100%;
+    font-size: 1rem;
+    box-shadow: rgb(180, 180, 180);
+}
+
+.priority-radios{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+    margin-bottom: 1rem;
+}
+
+.priority-radios>label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.priority-radios>label>input{
+    margin-right: 0.5rem;
+}
+
+.form-body>input[type="submit"]{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.form-body>input[type="submit"]:hover{
+    background-color: grey;
+}
+/*
+Pop up form style End
+*/
