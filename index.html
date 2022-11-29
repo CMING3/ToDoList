@@ -11,6 +11,7 @@
 </head>
 <body>
     <div class="to-do-list">
+        
         <div class="header">
             <div class="logo">
                 <h1>To Do List</h1>
@@ -19,19 +20,57 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
         </div>
+
+
         <div class="sidebar">
             <ul class="navbar">
-                <li class="target-page"><i class="fa fa-folder-o" aria-hidden="true"></i>
-                    All Task</li>
-                <li><i class="fa fa-sun-o" aria-hidden="true"></i>
-                    Today</li>
-                <li><i class="fa fa-calendar" aria-hidden="true"></i>
-                    This Week</li>
-                <li><i class="fa fa-exclamation" aria-hidden="true"></i>
-                    Important</li>
-                <li><i class="fa fa-check" aria-hidden="true"></i>
-                    Completed</li>
+                <li>
+                    <label class="navbar-item-container">
+                        <input type="radio" name="navbar-item" class="navbar-item" />
+                        <span>
+                            <i class="fa fa-folder-o" aria-hidden="true"></i>
+                            All Task
+                        </span>
+                    </label>
+                </li>
+                <li>
+                    <label class="navbar-item-container">
+                        <input type="radio" name="navbar-item" class="navbar-item" />
+                        <span>
+                            <i class="fa fa-sun-o" aria-hidden="true"></i>
+                            Today
+                        </span>
+                    </label>
+                </li>
+                <li>
+                    <label class="navbar-item-container">
+                        <input type="radio" name="navbar-item" class="navbar-item" />
+                        <span>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            This Week
+                        </span>
+                    </label>
+                </li>
+                <li>
+                    <label class="navbar-item-container">
+                        <input type="radio" name="navbar-item" class="navbar-item" />
+                        <span>
+                            <i class="fa fa-exclamation" aria-hidden="true"></i>
+                            Important
+                        </span>
+                    </label>
+                </li>
+                <li>
+                    <label class="navbar-item-container">
+                        <input type="radio" name="navbar-item" class="navbar-item" />
+                        <span>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            Completed
+                        </span>
+                    </label>
+                </li>
             </ul>
+
             <div class="project-container">
                 <div class="project-title">
                     <h3>Projects</h3>
@@ -40,11 +79,99 @@
                     </div>
                 </div>
 
-                <div class="projects"></div>
+                <div class="add-project-form">
+                    <form class="add-project-form-container">
+                        <h4>Add a new Project</h4>
+                        <input type="text" name="project-name">
+                        <input type="submit" value="add">
+                    </form>
+                </div>
+
+                <div class="projects">
+                    <div class="project-item">
+                        Project A
+                    </div>
+                    <div class="project-item">
+                        Project B
+                    </div>
+                </div>
             </div>
         </div>
+
+
         <div class="content">
+            <!--tasks increment here-->
+            <div class="task-list">
+
+                <!--task item template-->
+                <!-- <div class="task-item">
+                        <input type="checkbox">
+                    <div class="task-content">
+                        <input type="date" class="date" value="2022-11-29" readonly>
+                        <input type="text" value="Make a video" class="item" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div> -->
+                <div class="task-item">
+                    <input type="checkbox">
+                <div class="task-content">
+                    <input type="date" class="date" value="2022-11-29" readonly>
+                    <input type="text" value="type some code" class="item" readonly>
+                </div>
+                <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
+            <div class="task-item">
+                <input type="checkbox">
+            <div class="task-content">
+                <input type="date" class="date" value="2022-11-29" readonly>
+                <input type="text" value="drink a coffee" class="item" readonly>
+            </div>
+            <div class="actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+
+            </div>
+
+            <!--add task button-->
             <div class="add-task">+</div>
+
+            <!--popupform here-->
+            <div class="form-modal">
+                <form class="add-task-form">
+                    <div class="form-head">
+                        <h1>Add New To-Do</h1>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                    <br>
+                    <div class="form-body">
+                        <h3>What are you going to do?</h3>
+                        <input type="text" name="content" id="content" placeholder="e.g. drink a coffee">
+                        <h3>Due Date</h3>
+                        <input type="date" name="dueDate" id="dueDate">
+                        <h3>Priority</h3>
+                        <div class="priority-radios">
+                            <label>
+                                <input type="radio" name="priority" id="priority-low" value="low">
+                                <div>low</div>
+                            </label>
+                            <label>
+                                <input type="radio" name="priority" id="priority-high" value="high">
+                                <div>high</div>     
+                            </label>
+                        </div>
+                        <input type="submit" value="add">
+                    </div>
+                </form>
+            </div>
+                
         </div>
     </div>
 </body>
