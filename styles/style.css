@@ -234,7 +234,7 @@ Pop up form style start here
     align-items: center;
 }
 
-.add-task-form{
+#add-task-form{
     width: 60%;
     height: 60%;
     border: 1px solid black;
@@ -246,7 +246,7 @@ Pop up form style start here
 }
 
 @media screen and (max-width: 800px) {
-    .add-task-form{
+    #add-task-form{
         width: 80%;
         height: 80%;
     }
