@@ -1,27 +1,19 @@
-export default function dataBase(){
-    taskList = JSON.parse(localStorage.getItem("taskData"))
-    projectList = JSON.parse(localStorage.getItem("projectData"))
-    /*
-    task[{
-            title: string,
-            desc: string,
-            priority: string,
-            date: date,
-            complete: boolean,
-            project: string,
-        }]
-    */
-    let taskList = [];
+let taskList = JSON.parse(localStorage.getItem("taskData")) || [];
 
-    /*
-    projectList["project A", "project B"]
-    */
-    let projectList = [];
+export default function dataBase(el){
+    const taskForm = new task(el.content.value, el.priority.value, el.dueDate.value)
 
-    getLocalStorage()
+    taskList.push(taskForm)
+    localStorage.setItem("taskData", JSON.stringify(taskList));
+
 }
 
-const getLocalStorage = () => {
-    //task & project .push(localstorage) 
+//task object constructor
+function task(title, priority, date) {
+    this.title = title;
+    this.priority = priority;
+    this.date = date;
+    this.complete = false;
+    this.project = false;
 }
 
